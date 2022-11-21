@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: localhostarpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: localhostarpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: localhostarpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: localhostarpipelinesjavascriptdocker 
+          image: stacr01.azurecr.io/localhostarpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
